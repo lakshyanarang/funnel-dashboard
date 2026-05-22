@@ -9,32 +9,48 @@
   :root { color-scheme: light; }
   * { box-sizing: border-box; }
   html, body { margin: 0; background: #f7f7f5; color: #1c1c1a; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-  body { padding: 48px 28px 80px; max-width: 980px; margin: 0 auto; }
+  body { padding: 36px 24px 80px; max-width: 1240px; margin: 0 auto; }
   header h1 { margin: 0 0 6px; font-size: 26px; letter-spacing: -0.01em; }
   header .sub { color: #6b6b66; font-size: 14px; }
   .ts { font-size: 11px; color: #b3b3ad; margin-top: 6px; }
+  .banner { background: #fff5e6; border: 1px solid #f0d8a8; color: #7a5a14; border-radius: 10px; padding: 10px 14px; font-size: 13px; line-height: 1.5; margin: 14px 0 0; }
+  .banner b { color: #5a4310; }
   .card { background: #fff; border: 1px solid #e7e7e2; border-radius: 12px; padding: 18px 22px; margin-top: 14px; }
   .card h2 { margin: 0 0 8px; font-size: 14px; color: #555; text-transform: uppercase; letter-spacing: 0.06em; }
-  .card p { margin: 6px 0; font-size: 14px; line-height: 1.55; }
+  .card p { margin: 6px 0; font-size: 13.5px; line-height: 1.55; }
   .card code { background: #fafaf7; border: 1px solid #ececea; border-radius: 4px; padding: 1px 6px; font-size: 12.5px; }
-  .funnel { display: grid; grid-template-columns: repeat(8, 1fr); gap: 6px; margin-top: 14px; }
-  @media (max-width: 880px) { .funnel { grid-template-columns: repeat(4, 1fr); } }
-  @media (max-width: 480px) { .funnel { grid-template-columns: repeat(2, 1fr); } }
-  .col { background: #fafaf7; border: 1px solid #ececea; border-radius: 8px; padding: 10px 8px; text-align: center; font-size: 12px; }
-  .col .name { font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: #555; margin-bottom: 4px; }
-  .col .tgt { color: #b3b3ad; font-size: 10px; }
-  .col .count { background: #1c1c1a; color: #fff; border-radius: 999px; padding: 2px 8px; font-size: 11px; font-weight: 600; display: inline-block; margin-top: 6px; }
-  .col.active { background: #fff7e6; border-color: #f0d8a8; }
-  .col.active .count { background: #b95c1e; }
-  .strip { height: 3px; border-radius: 2px; margin: -4px -8px 8px; }
+  .funnel { display: grid; grid-template-columns: repeat(8, 1fr); gap: 8px; margin-top: 14px; }
+  @media (max-width: 1100px) { .funnel { grid-template-columns: repeat(4, 1fr); } }
+  @media (max-width: 560px) { .funnel { grid-template-columns: repeat(2, 1fr); } }
+  .col { background: #fafaf7; border: 1px solid #ececea; border-radius: 8px; padding: 10px 10px 12px; min-height: 160px; display: flex; flex-direction: column; }
+  .col .head { display: flex; justify-content: space-between; align-items: baseline; }
+  .col .name { font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: #555; }
+  .col .count { background: #1c1c1a; color: #fff; border-radius: 999px; padding: 1px 7px; font-size: 11px; font-weight: 600; }
+  .col .tgt { color: #b3b3ad; font-size: 10px; margin-top: 2px; }
+  .col .strip { height: 3px; border-radius: 2px; margin: 6px -10px 8px; }
   .strip.af { background: #a3b1c7; } .strip.dl { background: #7d92b3; }
   .strip.m1 { background: #f4c97a; } .strip.m2 { background: #f0b25c; } .strip.m3 { background: #ec9a3f; }
   .strip.m4 { background: #d97b2a; } .strip.m5 { background: #b95c1e; } .strip.gtm { background: #4a8a52; }
+  .col .brand { background: #fff; border: 1px solid #ececea; border-radius: 6px; padding: 5px 8px; font-size: 12px; line-height: 1.25; margin-top: 4px; }
+  .col .brand.live { background: #fffbf2; border-color: #f0d8a8; }
+  .col .brand .tag { font-size: 9px; color: #b3b3ad; text-transform: uppercase; letter-spacing: 0.05em; }
+  .col .brand.live .tag { color: #b95c1e; }
+  .col .empty { color: #b3b3ad; font-style: italic; font-size: 11px; padding: 4px 2px; }
   table { width: 100%; border-collapse: collapse; font-size: 12.5px; margin-top: 10px; }
   th, td { padding: 6px 8px; border-bottom: 1px solid #efefec; text-align: left; }
   th { font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em; color: #8a8a83; }
   td.muted { color: #b3b3ad; }
+  td.num { text-align: right; font-variant-numeric: tabular-nums; color: #b3b3ad; }
+  th.num { text-align: right; }
   a { color: #2f6b3a; }
+  .insights { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+  @media (max-width: 760px) { .insights { grid-template-columns: 1fr; } }
+  .insight { background: #fafaf7; border: 1px solid #ececea; border-left: 4px solid #d9d9d4; border-radius: 8px; padding: 10px 12px; }
+  .insight.high { border-left-color: #b95c1e; }
+  .insight.medium { border-left-color: #d97b2a; }
+  .insight .tag { font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; color: #8a8a83; }
+  .insight .head { font-size: 13px; font-weight: 600; margin: 3px 0 4px; }
+  .insight .detail { font-size: 12px; line-height: 1.45; color: #555; }
 </style>
 </head>
 <body>
@@ -42,51 +58,64 @@
   <h1>GobbleCube Funnel Dashboard</h1>
   <div class="sub">Live perf-marketing funnel + TAT report, sourced from ClickUp.</div>
   <div class="ts">Snapshot: 2026-05-22 · Re-run <code>/funnel-dashboard</code> in Cowork to refresh.</div>
+  <div class="banner">
+    <b>Seeded preview.</b> Until live milestone dates land on Trial Ongoing subtasks, the M2–GTM Handover columns below are seeded with the team's current set of brands so you can see the shape of a populated funnel. <b>Test Deal</b> at M1 is the only entry sourced from ClickUp; the rest will be replaced automatically when real milestone subtasks start closing.
+  </div>
 </header>
 
 <div class="card">
-  <h2>Funnel (open work only)</h2>
+  <h2>Funnel (open work + seeded preview)</h2>
   <div class="funnel">
-    <div class="col"><div class="strip af"></div><div class="name">Onb · AF</div><div class="tgt">target 1d</div><div class="count">0</div></div>
-    <div class="col"><div class="strip dl"></div><div class="name">Onb · DL</div><div class="tgt">target 1d</div><div class="count">0</div></div>
-    <div class="col active"><div class="strip m1"></div><div class="name">M1</div><div class="tgt">target 1d</div><div class="count">1</div></div>
-    <div class="col"><div class="strip m2"></div><div class="name">M2</div><div class="tgt">target 1d</div><div class="count">0</div></div>
-    <div class="col"><div class="strip m3"></div><div class="name">M3</div><div class="tgt">target 3d</div><div class="count">0</div></div>
-    <div class="col"><div class="strip m4"></div><div class="name">M4</div><div class="tgt">target 2d</div><div class="count">0</div></div>
-    <div class="col"><div class="strip m5"></div><div class="name">M5</div><div class="tgt">target 3d</div><div class="count">0</div></div>
-    <div class="col"><div class="strip gtm"></div><div class="name">GTM</div><div class="tgt">handover</div><div class="count">0</div></div>
+    <div class="col"><div class="head"><span class="name">Onb · AF</span><span class="count">0</span></div><div class="tgt">target 1d</div><div class="strip af"></div><div class="empty">No open work</div></div>
+    <div class="col"><div class="head"><span class="name">Onb · DL</span><span class="count">0</span></div><div class="tgt">target 1d</div><div class="strip dl"></div><div class="empty">No open work</div></div>
+    <div class="col"><div class="head"><span class="name">M1</span><span class="count">1</span></div><div class="tgt">target 1d</div><div class="strip m1"></div>
+      <div class="brand live"><div class="tag">live</div>Test Deal</div>
+    </div>
+    <div class="col"><div class="head"><span class="name">M2</span><span class="count">6</span></div><div class="tgt">target 1d</div><div class="strip m2"></div>
+      <div class="brand"><div class="tag">seed</div>Pilgrim</div>
+      <div class="brand"><div class="tag">seed</div>Supply6</div>
+      <div class="brand"><div class="tag">seed</div>Wellversed</div>
+      <div class="brand"><div class="tag">seed</div>Malwa Story</div>
+      <div class="brand"><div class="tag">seed</div>Svasthyaa</div>
+      <div class="brand"><div class="tag">seed</div>Travalate</div>
+    </div>
+    <div class="col"><div class="head"><span class="name">M3</span><span class="count">1</span></div><div class="tgt">target 3d</div><div class="strip m3"></div>
+      <div class="brand"><div class="tag">seed</div>Outwrk</div>
+    </div>
+    <div class="col"><div class="head"><span class="name">M4</span><span class="count">0</span></div><div class="tgt">target 2d</div><div class="strip m4"></div><div class="empty">—</div></div>
+    <div class="col"><div class="head"><span class="name">M5</span><span class="count">1</span></div><div class="tgt">target 3d</div><div class="strip m5"></div>
+      <div class="brand"><div class="tag">seed</div>Selectaisle</div>
+    </div>
+    <div class="col"><div class="head"><span class="name">GTM</span><span class="count">2</span></div><div class="tgt">handover</div><div class="strip gtm"></div>
+      <div class="brand"><div class="tag">seed</div>Indic Wisdom</div>
+      <div class="brand"><div class="tag">seed</div>XYXX</div>
+    </div>
   </div>
-  <table>
-    <thead><tr><th>Deal</th><th>Stage</th><th>ClickUp</th></tr></thead>
-    <tbody>
-      <tr>
-        <td><strong>Test Deal</strong></td>
-        <td>M1 — Walkthrough (all 5 milestone subtasks open)</td>
-        <td><a href="https://app.clickup.com/t/86ba03ujr" target="_blank">86ba03ujr</a></td>
-      </tr>
-    </tbody>
-  </table>
 </div>
 
 <div class="card">
   <h2>TAT report</h2>
-  <p>Every TAT cell is <code>—</code> right now because no milestone subtask, AF subtask, DL subtask, or GTM Handover task has been closed yet, so there's no <code>date_closed</code> anchor to compute durations from.</p>
+  <p>Every cell is <code>—</code> because no milestone subtask, AF/DL subtask, or GTM Handover task has been closed yet on a Trial Ongoing parent. Seeded brands above don't have <code>date_closed</code> anchors either; they're placeholders until live closures begin.</p>
   <table>
-    <thead><tr><th>AF→DL</th><th>DL→M1</th><th>M1→M2</th><th>M2→M3</th><th>M3→M4</th><th>M4→M5</th><th>M5→GTM</th><th>Total</th></tr></thead>
-    <tbody><tr><td class="muted">—</td><td class="muted">—</td><td class="muted">—</td><td class="muted">—</td><td class="muted">—</td><td class="muted">—</td><td class="muted">—</td><td class="muted">—</td></tr></tbody>
+    <thead><tr><th>AF→DL <span style="color:#b3b3ad;font-weight:400;text-transform:none;">(1d)</span></th><th class="num">DL→M1 <span style="color:#b3b3ad;font-weight:400;text-transform:none;">(1d)</span></th><th class="num">M1→M2 <span style="color:#b3b3ad;font-weight:400;text-transform:none;">(1d)</span></th><th class="num">M2→M3 <span style="color:#b3b3ad;font-weight:400;text-transform:none;">(3d)</span></th><th class="num">M3→M4 <span style="color:#b3b3ad;font-weight:400;text-transform:none;">(2d)</span></th><th class="num">M4→M5 <span style="color:#b3b3ad;font-weight:400;text-transform:none;">(3d)</span></th><th class="num">M5→GTM</th><th class="num">Total <span style="color:#b3b3ad;font-weight:400;text-transform:none;">(11d)</span></th></tr></thead>
+    <tbody><tr><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr></tbody>
   </table>
-  <p style="margin-top:10px;"><strong>Targets</strong>: AF→DL 1d · DL→M1 1d · M1→M2 1d · M2→M3 3d · M3→M4 2d · M4→M5 3d · sum 11d. KPI cards in the full dashboard render orange when average exceeds target, green when under.</p>
 </div>
 
 <div class="card">
-  <h2>Insights</h2>
-  <p style="color:#8a8a83;font-style:italic;">Not enough data yet. As your team closes subtasks and Onboarding/GTM Handover tasks land, the next run will populate bottlenecks, slowest/fastest stages, and outlier deals automatically.</p>
+  <h2>Insights (seeded preview)</h2>
+  <div class="insights">
+    <div class="insight high"><div class="tag">Bottleneck</div><div class="head">6 trials pending at M2</div><div class="detail">M2 has the most open work right now — 5 more than the next column. Worth a check on whether the Use Case Discovery (Meeting 2) is scheduled for each of Pilgrim, Supply6, Wellversed, Malwa Story, Svasthyaa, and Travalate.</div></div>
+    <div class="insight medium"><div class="tag">Funnel shape</div><div class="head">9 active trials vs 2 pending GTM Handover</div><div class="detail">Active-to-handover ratio is 4.5:1. Once the M2 cluster moves forward, GTM Handover capacity should be ready to absorb the wave.</div></div>
+    <div class="insight"><div class="tag">Data coverage</div><div class="head">0 / 11 deals have any milestone date set</div><div class="detail">TAT averages will populate as soon as your team starts closing milestone subtasks. Until then, every transition cell renders as "—".</div></div>
+    <div class="insight"><div class="tag">Seeded</div><div class="head">10 of 11 cards are seeded placeholders</div><div class="detail">Only Test Deal at M1 is sourced live from ClickUp. The other 10 brands shown here will be replaced automatically when the corresponding Trial Ongoing parents (or GTM Handover entries) appear in the relevant lists.</div></div>
+  </div>
 </div>
 
 <div class="card">
   <h2>How to refresh</h2>
   <p>From Cowork, say <code>"run the funnel dashboard"</code> (or use <code>/funnel-dashboard</code>). Each run pulls live ClickUp data and overwrites this URL.</p>
-  <p>Pulls from these lists: <a href="https://app.clickup.com/9014901208/v/li/901414331532" target="_blank">Onboarding</a> · <a href="https://app.clickup.com/9014901208/v/li/901414331535" target="_blank">Trial Ongoing</a> · <a href="https://app.clickup.com/9014901208/v/li/901414331536" target="_blank">GTM Handover</a>.</p>
+  <p>Pulls from: <a href="https://app.clickup.com/9014901208/v/li/901414331532" target="_blank">Onboarding</a> · <a href="https://app.clickup.com/9014901208/v/li/901414331535" target="_blank">Trial Ongoing</a> · <a href="https://app.clickup.com/9014901208/v/li/901414331536" target="_blank">GTM Handover</a>.</p>
 </div>
 </body>
 </html>
