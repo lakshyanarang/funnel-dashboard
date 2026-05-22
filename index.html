@@ -1,1 +1,60 @@
-<!doctype html><html><head><meta charset="utf-8"><title>Funnel</title></head><body><h1>placeholder</h1></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="robots" content="noindex,nofollow" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>GobbleCube Funnel Dashboard</title>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: #f7f7f5; color: #1c1c1a; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  body { padding: 56px 28px 80px; max-width: 880px; margin: 0 auto; }
+  header h1 { margin: 0 0 6px; font-size: 26px; letter-spacing: -0.01em; }
+  header .sub { color: #6b6b66; font-size: 14px; }
+  .stack { display: grid; gap: 14px; margin-top: 28px; }
+  .card { background: #fff; border: 1px solid #e7e7e2; border-radius: 12px; padding: 18px 22px; }
+  .card h2 { margin: 0 0 8px; font-size: 15px; color: #555; text-transform: uppercase; letter-spacing: 0.06em; }
+  .card p { margin: 6px 0; font-size: 14px; line-height: 1.6; color: #1c1c1a; }
+  .card code { background: #fafaf7; border: 1px solid #ececea; border-radius: 4px; padding: 2px 7px; font-size: 12.5px; }
+  .stages { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-top: 14px; }
+  @media (max-width: 640px) { .stages { grid-template-columns: repeat(2, 1fr); } }
+  .stage { background: #fafaf7; border: 1px solid #ececea; border-radius: 8px; padding: 8px 10px; font-size: 12.5px; font-weight: 500; text-align: center; }
+  .stage .tag { font-size: 10px; color: #8a8a83; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 3px; }
+  .stage .tgt { color: #b3b3ad; font-weight: 400; }
+  .timestamp { font-size: 11px; color: #b3b3ad; margin-top: 24px; text-align: right; }
+  a { color: #2f6b3a; }
+</style>
+</head>
+<body>
+<header>
+  <h1>GobbleCube Funnel Dashboard</h1>
+  <div class="sub">Live perf-marketing funnel + TAT report, sourced from ClickUp. Refreshed by running <code>/funnel-dashboard</code> from Cowork.</div>
+</header>
+<div class="stack">
+  <div class="card">
+    <h2>8 Funnel Stages</h2>
+    <p>Each Trial Ongoing parent sits in the lowest stage where it still has pending work. Onboarding splits into Auto Forwarding and Dashboard Live based on Lead Requested subtasks.</p>
+    <div class="stages">
+      <div class="stage"><span class="tag">Onb AF</span>Auto Forwarding<br><span class="tgt">target 1d</span></div>
+      <div class="stage"><span class="tag">Onb DL</span>Dashboard Live<br><span class="tgt">target 1d</span></div>
+      <div class="stage"><span class="tag">M1</span>Walkthrough<br><span class="tgt">target 1d</span></div>
+      <div class="stage"><span class="tag">M2</span>Use Case<br><span class="tgt">target 1d</span></div>
+      <div class="stage"><span class="tag">M3</span>Ruleset<br><span class="tgt">target 3d</span></div>
+      <div class="stage"><span class="tag">M4</span>Optimisation<br><span class="tgt">target 2d</span></div>
+      <div class="stage"><span class="tag">M5</span>Impact Review<br><span class="tgt">target 3d</span></div>
+      <div class="stage"><span class="tag">GTM</span>Handover</div>
+    </div>
+  </div>
+  <div class="card">
+    <h2>TAT report</h2>
+    <p>Days between consecutive stage closes, computed from each task and subtask's <code>date_closed</code> on ClickUp. Stages exceeding their per-stage targets surface in the Insights section as bottlenecks.</p>
+  </div>
+  <div class="card">
+    <h2>Refreshing</h2>
+    <p>From Cowork: ask Claude to "run the funnel dashboard" (or use <code>/funnel-dashboard</code>). Each run pulls live ClickUp data and republishes this page so the URL stays the same — bookmark <code>lakshyanarang.github.io/funnel-dashboard/</code> and check back any time.</p>
+  </div>
+</div>
+<div class="timestamp">Last bootstrapped: 2026-05-22</div>
+</body>
+</html>
